@@ -120,6 +120,9 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 vim.keymap.set('n', '<leader>fs', ':w<CR>', { desc = '[F]ile [S]ave' })
+vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = '[W]rite' })
+vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = '[Q]quit' })
+vim.keymap.set('n', '<leader>Q', ':qa<CR>', { desc = '[Q]quit All' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -158,13 +161,14 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
+  require 'custom.plugins.colorscheme',
+  require 'custom.plugins.dashboard',
   require 'custom.plugins.gitsigns',
   require 'custom.plugins.which-key',
   require 'custom.plugins.telescope',
   require 'custom.plugins.lsp',
   require 'custom.plugins.conform',
   require 'custom.plugins.cmp',
-  require 'custom.plugins.colorscheme',
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   -- TODO: Add to which key

@@ -4,6 +4,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
   branch = '0.1.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope-file-browser.nvim',
     { -- If encountering errors, see telescope-fzf-native README for installation instructions
       'nvim-telescope/telescope-fzf-native.nvim',
 
@@ -58,12 +59,24 @@ return { -- Fuzzy Finder (files, lsp, etc)
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
         },
+        file_browser = {
+          hijack_netrw = true,
+          mappings = {
+            -- ['i'] = {
+            --   -- your custom insert mode mappings
+            -- },
+            -- ['n'] = {
+            --   -- your custom normal mode mappings
+            -- },
+          },
+        },
       },
     }
 
     -- Enable Telescope extensions if they are installed
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
+    pcall(require('telescope').load_extension, 'file_browser')
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
@@ -78,6 +91,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+    vim.keymap.set('n', '<leader>pb', function()
+      require('telescope').extensions.file_browser.file_browser()
+    end)
 
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>/', function()
