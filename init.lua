@@ -180,6 +180,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   { 'christoomey/vim-tmux-navigator' },
+  require 'custom.plugins.oil',
   -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   -- TODO: Maybe use this in the future?
