@@ -182,7 +182,7 @@ require('lazy').setup({
   { 'christoomey/vim-tmux-navigator' },
   require 'custom.plugins.oil',
   -- require 'kickstart.plugins.neo-tree',
-  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'custom.plugins.openingh',
   -- TODO: Maybe use this in the future?
   -- { import = 'custom.plugins' },
