@@ -38,7 +38,7 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
+-- vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -176,13 +176,14 @@ require('lazy').setup({
   require 'custom.plugins.mini',
   require 'custom.plugins.treesitter',
   -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   { 'christoomey/vim-tmux-navigator' },
   require 'custom.plugins.oil',
   -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'custom.plugins.openingh',
   -- TODO: Maybe use this in the future?
   -- { import = 'custom.plugins' },
 }, {
