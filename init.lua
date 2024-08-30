@@ -210,3 +210,21 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- Terraform
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'terraform',
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+  end,
+})
+
+-- HCL
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'hcl',
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+  end,
+})
