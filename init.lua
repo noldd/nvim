@@ -35,10 +35,16 @@ vim.opt.mouse = ''
 
 vim.opt.showmode = false
 
+-- Clipboard
+--
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 -- vim.opt.clipboard = 'unnamedplus'
+
+-- More sane keyubinds for yanking to system clipboard
+vim.keymap.set('n', '<leader>y', '"+y', { desc = '[Y]ank to system clipboard' })
+vim.keymap.set('v', '<leader>y', '"+y', { desc = '[Y]ank to system clipboard' })
 
 -- Enable break indent
 vim.opt.breakindent = true
